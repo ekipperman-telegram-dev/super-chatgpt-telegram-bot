@@ -15,6 +15,11 @@ from plugins.worldtimeapi import WorldTimeApiPlugin
 from plugins.whois_ import WhoisPlugin
 from plugins.webshot import WebshotPlugin
 from plugins.iplocation import IpLocationPlugin
+from plugins.scrape_influencer import ScrapeInfluencerPlugin
+from plugins.review_leads import ReviewLeadsPlugin
+from plugins.outreach_dm import OutreachDMPlugin
+from plugins.send_buttons import SendButtonsPlugin
+from plugins.set_filters import SetFiltersPlugin
 
 
 class PluginManager:
@@ -40,6 +45,11 @@ class PluginManager:
             'whois': WhoisPlugin,
             'webshot': WebshotPlugin,
             'iplocation': IpLocationPlugin,
+    'scrape_influencer': ScrapeInfluencerPlugin,
+    'review_leads': ReviewLeadsPlugin,
+    'outreach_dm': OutreachDMPlugin,
+    'send_buttons': SendButtonsPlugin,
+    'set_filters': SetFiltersPlugin,
         }
         self.plugins = [plugin_mapping[plugin]() for plugin in enabled_plugins if plugin in plugin_mapping]
 
