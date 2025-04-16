@@ -51,7 +51,15 @@ class PluginManager:
     'send_buttons': SendButtonsPlugin,
     'set_filters': SetFiltersPlugin,
         }
-        self.plugins = [plugin_mapping[plugin]() for plugin in enabled_plugins if plugin in plugin_mapping]
+        self.plugins = []
+
+        for plugin_key in enabled_plugins:
+            if plugin_key in plugin_mapping:
+                print(f"✅ Loading plugin: {plugin_key}")
+                self.plugins.append(plugin_mapping[plugin_key]())
+           else:
+               print(f"⚠️ Plugin not found in mapping: {plugin_key}")
+
 
     def get_functions_specs(self):
         """
